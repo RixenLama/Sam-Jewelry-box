@@ -99,7 +99,7 @@ p{
 
 /*HERO*/
 .hero-container{
-  background-image: url("./hero-img.svg");
+  background-image: url("../public/hero-img.svg");
   min-height: 80vh;
   max-width: 100vw;
   margin-top: 5vh;
