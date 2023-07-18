@@ -1,4 +1,3 @@
-import Button from "../components/button-jsx"
 
 const AboutMe = () =>{
     return(
@@ -33,6 +32,9 @@ const AboutMe = () =>{
                     eu dapibus urna diam eu orci. Quisque suscipit scelerisque neque at elementum. Nunc in lacinia leo, a auctor augue. 
                     Nunc nec lacus a augue commodo viverra eu et neque. Vivamus vitae enim eu ex bibendum sollicitudin.
                     Cras id pellentesque velit, eu tempus risus. Nulla vestibulum felis enim, at bibendum libero iac</p>
+                    <button className="BUTTON">
+                        Connect with me!
+                    </button>
                 </div>
             </div>
         </div>
