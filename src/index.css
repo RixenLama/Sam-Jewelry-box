@@ -163,6 +163,7 @@ p{
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(".././public/portfolio-bg.svg");
+  background-attachment: fixed;
   padding-bottom: 2rem;
 }
 .portfolio-item{
@@ -184,6 +185,51 @@ p{
   padding-top: 6rem;
 }
 
+/*CONTACT*/
+.contact-container{
+  padding-bottom: 4rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.contact-card{
+  display: flex;
+  flex-direction: column;
+  opacity: 0.9;
+}
+.contact-card:hover{
+  box-shadow: 0px 10px 35px -60px rgba(255, 255, 255, 1);
+  opacity: 1;
+}
+.contact-card-text{
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  height: 64px;
+}
+.contact-header{
+  padding-bottom: 4rem;
+  padding-top: 2rem;
+}
+.contact-card-top-img{
+  width: 100%;
+}
+
+/*FOOTER*/
+.footer-text-container{
+  display: flex;
+  background-color: #0E172C;
+  justify-content: center;
+  padding: 1rem;
+}
+.footer-img{
+  display: flex;
+  width: 100%;
+  object-fit: cover;
+}
 
 @media only screen and (max-width: 700px) {
 

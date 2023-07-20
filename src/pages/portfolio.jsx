@@ -5,7 +5,7 @@ const Portfolio = () =>{
             <div className="portfolio-bg">
                 <div className="container">
                     
-                    <h2 className="portfolio-header TEXTCENTER DBLUE ONE">Previous Collections</h2>
+                    <h2 className="portfolio-header TEXTCENTER WHITE LIGHT ONE">Previous Collections</h2>
                     <div className="portfolio-container">
                         <div className="portfolio-item">
                             <img className="portfolio-img" src="./portfolio-1.png" alt="" />
