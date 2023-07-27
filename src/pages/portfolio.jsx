@@ -1,14 +1,23 @@
+import UseContentful from "../useContentful"
+import { useEffect, useState } from "react"
 
 const Portfolio = () =>{
-    const image = document.querySelectorAll(".portfolio-img")
+    const images = document.querySelectorAll(".portfolio-img")
     const necklace = document.querySelectorAll("#necklace")
 
+    const [image, setImages] = useState([])
+    const { getImages } = UseContentful ();
+    
+    useEffect(() =>{
+        getImages().then((response) => setImages(response))
+    })
+
     const filterNecklace = () =>{
-        image.forEach((element) =>{
-            element.style.display = "none"
+        images.forEach((a) =>{
+            a.style.display = "none"
         })
-        necklace.forEach((element) =>{
-            element.style.display = "block"
+        necklace.forEach((b) =>{
+            b.style.display = "block"
         })
     }
 
@@ -24,7 +33,7 @@ const Portfolio = () =>{
                     </div>
                     <div className="portfolio-container">           
                         <div className="portfolio-item">
-                            <img id="necklace" className="portfolio-img" src="./portfolio-1.png" alt="" />
+                            <img id="necklace" className="portfolio-img" src="image.url" alt="" />
                         </div>
                         <div className="portfolio-item">
                             <img id="necklace" className="portfolio-img" src="./portfolio-2.png" alt="" />
