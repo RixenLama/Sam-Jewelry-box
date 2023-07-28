@@ -1,18 +1,19 @@
 import UseContentful from "../useContentful"
 import { useEffect, useState } from "react"
+import BraceletHolder from "../components/bracelet-holder"
+
 
 const Portfolio = () =>{
+    const [bracelets, setBracelets] = useState([])
+    const { getBracelet } = UseContentful ();
     const images = document.querySelectorAll(".portfolio-img")
     const necklace = document.querySelectorAll("#necklace")
 
-    const [image, setImages] = useState([])
-    const { getImages } = UseContentful ();
-    
-    useEffect(() =>{
-        getImages().then((response) => setImages(response))
-    })
+    useEffect(() => {
+        getBracelet().then((response) => getBracelet([response]))
+    });
 
-    const filterNecklace = () =>{
+    const changeNecklace = () =>{
         images.forEach((a) =>{
             a.style.display = "none"
         })
@@ -27,71 +28,14 @@ const Portfolio = () =>{
                 <div className="container">
                     <h2 className="portfolio-header TEXTCENTER WHITE LIGHT ONE">Previous Collections</h2>
                     <div className="portfolio-filter-container">
-                        <button onClick={filterNecklace} className="WHITE BUTTON">
+                        <button onClick={changeNecklace} className="WHITE BUTTON">
                             Necklace
                         </button>
                     </div>
                     <div className="portfolio-container">           
-                        <div className="portfolio-item">
-                            <img id="necklace" className="portfolio-img" src="image.url" alt="" />
-                        </div>
-                        <div className="portfolio-item">
-                            <img id="necklace" className="portfolio-img" src="./portfolio-2.png" alt="" />
-                        </div>
-                        <div className="portfolio-item">
-                            <img id="necklace" className="portfolio-img" src="./portfolio-3.png" alt="" />
-                        </div>
-                        <div className="portfolio-item">
-                            <img id="necklace" className="portfolio-img" src="./portfolio-4.png" alt="" />    
-                        </div>
-                        <div className="portfolio-item">
-                            <img className="portfolio-img" src="./portfolio-1.png" alt="" />
-                        </div>
-                        <div className="portfolio-item">
-                            <img className="portfolio-img" src="./portfolio-2.png" alt="" />
-                        </div>
-                        <div className="portfolio-item">
-                            <img className="portfolio-img" src="./portfolio-3.png" alt="" />
-                        </div>
-                        <div className="portfolio-item">
-                            <img className="portfolio-img" src="./portfolio-4.png" alt="" />    
-                        </div>
-                        <div className="portfolio-item">
-                            <img className="portfolio-img" src="./portfolio-1.png" alt="" />
-                        </div>
-                        <div className="portfolio-item">
-                            <img className="portfolio-img" src="./portfolio-2.png" alt="" />
-                        </div>
-                        <div className="portfolio-item">
-                            <img className="portfolio-img" src="./portfolio-3.png" alt="" />
-                        </div>
-                        <div className="portfolio-item">
-                            <img className="portfolio-img" src="./portfolio-4.png" alt="" />    
-                        </div>
-                        <div className="portfolio-item">
-                            <img className="portfolio-img" src="./portfolio-1.png" alt="" />
-                        </div>
-                        <div className="portfolio-item">
-                            <img className="portfolio-img" src="./portfolio-2.png" alt="" />
-                        </div>
-                        <div className="portfolio-item">
-                            <img className="portfolio-img" src="./portfolio-3.png" alt="" />
-                        </div>
-                        <div className="portfolio-item">
-                            <img className="portfolio-img" src="./portfolio-4.png" alt="" />    
-                        </div>
-                        <div className="portfolio-item">
-                            <img className="portfolio-img" src="./portfolio-1.png" alt="" />
-                        </div>
-                        <div className="portfolio-item">
-                            <img className="portfolio-img" src="./portfolio-2.png" alt="" />
-                        </div>
-                        <div className="portfolio-item">
-                            <img className="portfolio-img" src="./portfolio-3.png" alt="" />
-                        </div>
-                        <div className="portfolio-item">
-                            <img className="portfolio-img" src="./portfolio-4.png" alt="" />    
-                        </div>
+                        {
+                            bracelets.map((bracelet) => <BraceletHolder key={bracelet.braceletImage.title} bracelet={[bracelet]} />)
+                        }
                     </div>
                 </div>
             </div>

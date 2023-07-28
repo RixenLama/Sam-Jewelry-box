@@ -7,29 +7,28 @@ const UseContentful = () =>{
         accessToken: "2Hm7Yo09xT7jUHTboWPUHV3LRiKQVMMc-KdZcfVe1DA",
     });
 
-    const getImages = async () => {
+    const getBracelet = async () => {
         try{
-            const entries = await client.getEntries({
-                content_type: "shopitem",
+            const bracelet = await client.getEntries({
+                content_type: "bracelet",
                 select: "fields"
             });
-
-            const filteredEntries = entries.items.map((item) =>{
-                const image = item.fields.image.fields.file
+            const filterBracelet = bracelet.items.map((a) =>{
+                const braceletImage  = a.fields.image.fields;
 
                 return{
-                    ...item.fields,
-                    image
+                    braceletImage
                 }
-            })
-        
-        return filteredEntries
+            }) 
+
+        return{
+            filterBracelet
+        }
         } catch (error) {
             console.log('Error fectching shop items: ${error}')
         }
     }
-    
-    return { getImages }
+    return { getBracelet }
 }
 
 export default UseContentful
