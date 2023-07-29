@@ -1,8 +1,8 @@
 
 const BraceletHolder = ({ bracelet }) =>{
     return(
-        <div className="portfolio-item">
-            <img id="bracelets" className="portfolio-img" src={bracelet.braceletImage.file.url} alt="" />
+        <div id="bracelet">
+            <img className="portfolio-img" src={bracelet.fields.image.fields.file.url} alt="" />
         </div>
     )
 }

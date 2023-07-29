@@ -1,40 +1,39 @@
-import UseContentful from "../useContentful"
 import { useEffect, useState } from "react"
 import BraceletHolder from "../components/bracelet-holder"
+import { createClient } from "contentful"
+
+const client = createClient({
+    space: "yiclsl60atxf",
+    accessToken: "2Hm7Yo09xT7jUHTboWPUHV3LRiKQVMMc-KdZcfVe1DA",
+})
 
 
 const Portfolio = () =>{
-    const [bracelets, setBracelets] = useState([])
-    const { getBracelet } = UseContentful ();
-    const images = document.querySelectorAll(".portfolio-img")
-    const necklace = document.querySelectorAll("#necklace")
+    const [bracelets , setBracelets] = useState([]) 
 
     useEffect(() => {
-        getBracelet().then((response) => getBracelet([response]))
-    });
+        client.getEntries({
+            content_type: "bracelet"
+        }).then((entries) => setBracelets(entries.items)).catch((err) => console.log(err))
+    }, []) 
 
-    const changeNecklace = () =>{
-        images.forEach((a) =>{
-            a.style.display = "none"
-        })
-        necklace.forEach((b) =>{
-            b.style.display = "block"
-        })
+    if (bracelets.length === 0){
+        return null;
     }
-
+    
     return(
         <div className="fixer">
             <div className="portfolio-bg">
                 <div className="container">
                     <h2 className="portfolio-header TEXTCENTER WHITE LIGHT ONE">Previous Collections</h2>
                     <div className="portfolio-filter-container">
-                        <button onClick={changeNecklace} className="WHITE BUTTON">
+                        <button className="WHITE BUTTON">
                             Necklace
                         </button>
                     </div>
                     <div className="portfolio-container">           
                         {
-                            bracelets.map((bracelet) => <BraceletHolder key={bracelet.braceletImage.title} bracelet={[bracelet]} />)
+                            bracelets.map((bracelet) => <BraceletHolder bracelet={bracelet} />)
                         }
                     </div>
                 </div>
