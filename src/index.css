@@ -165,9 +165,12 @@ p{
   padding-bottom: 2rem;
 }
 .portfolio-img{
-  width: inherit;
-  height: inherit;
+  width: 100%;
+  height: 200px;
   object-fit: cover;
+}
+.portfolio-item{
+  width: 24%;
 }
 .portfolio-container{
   display: flex;
@@ -181,6 +184,7 @@ p{
 }
 .portfolio-filter-container{
   display: flex;
+  justify-content: space-evenly;
   padding-bottom: 2rem;
 }
 

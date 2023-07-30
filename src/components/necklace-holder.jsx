@@ -1,8 +1,8 @@
 
-const NecklaceHolder = () =>{
+const NecklaceHolder = ({ necklace }) =>{
     return(
-        <div className="portfolio-item">
-            <img id="necklaces" className="portfolio-img" src="" alt="" />
+        <div id="necklaceimage" className="portfolio-item">
+            <img className="portfolio-img" src={necklace.fields.image.fields.file.url} alt="" />
         </div>
     )
 }

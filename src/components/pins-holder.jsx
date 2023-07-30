@@ -1,9 +1,9 @@
 
-const PinsHolder = () =>{
+const PinsHolder = ({ pins }) =>{
     return(
-        <div className="portfolio-item">
-            <img id="necklaces" className="portfolio-img" src="" alt="" />
-        </div> 
+        <div id="pinsimage" className="portfolio-item">
+            <img className="portfolio-img" src={pins.fields.image.fields.file.url} alt="" />
+        </div>
     )
 }
 
