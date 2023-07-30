@@ -28,7 +28,7 @@ const Portfolio = () =>{
     useEffect(() => {
         client.getEntries({
             content_type: "pins"
-        }).then((b) => setNecklace(b.items)).catch((err) => console.log(err))
+        }).then((b) => setPins(b.items)).catch((err) => console.log(err))
     }, []) 
 
     if (bracelets.length === 0){
