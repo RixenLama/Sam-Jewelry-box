@@ -9,12 +9,11 @@ const client = createClient({
     accessToken: "2Hm7Yo09xT7jUHTboWPUHV3LRiKQVMMc-KdZcfVe1DA",
 })
 
-
 const Portfolio = () =>{
     const [bracelets , setBracelets] = useState([]) 
     const [necklaces , setNecklace] = useState([]) 
     const [pins , setPins] = useState([])
-    /*CONTENTFUL BULSHIT*/ 
+    /*CONTENTFUL*/ 
     useEffect(() => {
         client.getEntries({
             content_type: "bracelet"
@@ -38,7 +37,6 @@ const Portfolio = () =>{
     if (necklaces.length === 0){
         return null;
     }
-
     /*FILTERING SYSTEM*/
 
     const portfolioItem = document.querySelectorAll(".portfolio-item")
@@ -71,7 +69,7 @@ const Portfolio = () =>{
         })
     }
 
-    
+
     return(
         <div className="fixer">
             <div className="portfolio-bg">
