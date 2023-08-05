@@ -5,8 +5,8 @@ import { createClient } from "contentful"
 import PinsHolder from "../components/pins-holder"
 
 const client = createClient({
-    space: process.meta.env.VITE_CONTENTFUL_SPACE_ID, 
-    accessToken: process.env.VITE_CONTETNFUL_ACCESS_TOKEN
+    space: import.meta.env.VITE_CONTENTFUL_SPACE_ID, 
+    accessToken: import.meta.env.VITE_CONTETNFUL_ACCESS_TOKEN
 })
 
 const Portfolio = () =>{
