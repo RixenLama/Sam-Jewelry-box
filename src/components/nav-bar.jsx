@@ -6,7 +6,7 @@ const NavBar = () =>{
             <div className="nav-bar-top">
                 <div className="container">
                     <h3 className="CORMORANT BOLD">
-                        Sams Jewelry Box
+                        Sams Jewellery Box
                     </h3>
                 </div>
             </div>

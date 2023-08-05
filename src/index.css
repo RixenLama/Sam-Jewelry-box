@@ -115,7 +115,6 @@ p{
 .hero-container{
   background-image: url("../public/hero-img.svg");
   min-height: 80vh;
-  margin-top: 5vh;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -149,7 +148,7 @@ p{
 .about-me-img{
   height: 400px;
   filter: brightness(90%);
-  padding: 15px 15px;
+  padding: 5px;
   background-color: white;
   box-shadow: 0px 10px 55px -35px rgba(255, 255, 255, 1);
 }
