@@ -5,7 +5,7 @@ import { createClient } from "contentful"
 import PinsHolder from "../components/pins-holder"
 
 const client = createClient({
-    space: process.env.VITE_SPACE_KEY,
+    space: "yiclsl60atxf",
     accessToken: "2Hm7Yo09xT7jUHTboWPUHV3LRiKQVMMc-KdZcfVe1DA",
 })
 
