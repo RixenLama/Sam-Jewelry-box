@@ -6,7 +6,7 @@ import PinsHolder from "../components/pins-holder"
 
 const client = createClient({
     space: process.env.VITE_SPACE_KEY,
-    accessToken: process.env.VITE_ACCESS_TOKEN,
+    accessToken: "2Hm7Yo09xT7jUHTboWPUHV3LRiKQVMMc-KdZcfVe1DA",
 })
 
 const Portfolio = () =>{
